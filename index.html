@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Téléchargeur</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <button class="theme-toggle" id="themeToggle" aria-label="Basculer entre le mode sombre et clair">
+        <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+    </button>
+
+    <div class="container">
+        <div class="header">
+            <h1 class="fade-in">Téléchargeur</h1>
+            <p class="subtitle fade-in-delay">Vidéos et audios depuis 9 plateformes</p>
+        </div>
+
+        <div class="detected-platform" id="detectedPlatform"></div>
+
+        <form id="downloadForm">
+            <div class="input-group slide-up">
+                <label for="url">
+                    <span class="label-icon">🔗</span>
+                    <span>URL</span>
+                </label>
+                <input 
+                    type="text" 
+                    id="url" 
+                    placeholder="Collez votre lien ici"
+                    required
+                >
+            </div>
+
+            <div class="options">
+                <div class="input-group slide-up-delay-1">
+                    <label for="format">
+                        <span class="label-icon">📁</span>
+                        <span>Format</span>
+                    </label>
+                    <select id="format">
+                        <option value="mp4">MP4 (Vidéo)</option>
+                        <option value="mkv">MKV (Vidéo)</option>
+                        <option value="mp3">MP3 (Audio)</option>
+                        <option value="wav">WAV (Audio)</option>
+                    </select>
+                </div>
+
+                <div class="input-group slide-up-delay-2">
+                    <label for="quality">
+                        <span class="label-icon">✨</span>
+                        <span>Qualité</span>
+                    </label>
+                    <select id="quality">
+                        <option value="8k">8K (7680p)</option>
+                        <option value="4k">4K (2160p)</option>
+                        <option value="1440p">2K (1440p)</option>
+                        <option value="1080p" selected>Full HD (1080p)</option>
+                        <option value="720p">HD (720p)</option>
+                        <option value="480p">SD (480p)</option>
+                        <option value="best">Auto (Meilleure)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="checkbox-wrapper slide-up-delay-3">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="subtitles">
+                    <span>💬 Télécharger les sous-titres</span>
+                </label>
+            </div>
+
+            <button type="submit" class="download-btn slide-up-delay-4" id="downloadBtn">
+                <span class="btn-content">
+                    <span class="btn-icon">⬇️</span>
+                    <span>Télécharger</span>
+                </span>
+            </button>
+        </form>
+
+        <div class="status" id="status"></div>
+
+        <div class="footer fade-in-delay-2">
+            <a href="https://buymeacoffee.com/r3quiem" target="_blank" class="coffee-link">
+                <span class="coffee-icon">☕</span>
+                <span>Buy me a coffee</span>
+            </a>
+            <p class="made-with-love">made with ❤️ by r3quiem</p>
+        </div>
+    </div>
+    <div id="themeNotification" class="theme-notification"></div>
+    <script src="scripts.js"></script>
+</body>
+</html>
